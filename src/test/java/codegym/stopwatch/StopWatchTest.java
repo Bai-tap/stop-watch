@@ -17,17 +17,19 @@ public class StopWatchTest {
 
     @Test
     public void getEndTime() {
-    }
+        StopWatch stopWatch = new StopWatch();
+        long expected = System.currentTimeMillis();
 
-    @Test
-    public void start() {
-    }
-
-    @Test
-    public void end() {
+        long actual = stopWatch.getEndTime();
+        assertEquals(expected, actual);
     }
 
     @Test
     public void getElapsedTime() {
+        StopWatch stopWatch = new StopWatch();
+        long expected = stopWatch.end() - stopWatch.start();
+
+        long actual = stopWatch.getElapsedTime();
+        assertEquals(expected, actual);
     }
 }
